@@ -9,15 +9,11 @@
 	cursor: pointer;
 }
 
+#unitPicker,
 #unitPickerList > input[type=radio]:checked + label,
 #categoryList > input[type=radio]:checked + label,
 #collectionPickerList > input[type=radio]:checked + label {
 	border: 1px solid $primary-color;
-}
-
-#unitPicker {
-	width: 60px;
-	margin: 0 0 0 20px;
 }
 
 .btn:hover,
