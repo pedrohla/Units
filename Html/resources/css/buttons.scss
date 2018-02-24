@@ -1,42 +1,36 @@
-.btn {}
-
-#collectionPicker,
-#unitPicker,
-#unitPickerList > label,
-#categoryList > label,
-#collectionPickerList > label {
+.btn {
 	padding: 13px 24px;
-	border: 1px solid $primary-color;
+	display: inline-block;
+	border: 1px solid transparent;
 	color: $primary-color;
 	border-radius: 40px;
 	font-size: 16px;
 	background: transparent;
+	cursor: pointer;
+}
+
+#unitPickerList > input[type=radio]:checked + label,
+#categoryList > input[type=radio]:checked + label,
+#collectionPickerList > input[type=radio]:checked + label {
+	border: 1px solid $primary-color;
 }
 
 #unitPicker {
-	float: left;
 	width: 60px;
 	margin: 0 0 0 20px;
 }
 
-#collectionPicker:hover,
-#unitPicker:hover,
-#unitPickerList > label:hover,
-#unitPickerList > input[type=radio]:checked + label,
+.btn:hover,
 #categoryList > label:hover,
-#categoryList > input[type=radio]:checked + label,
-#collectionPicker:hover,
 #collectionPickerList > label:hover,
-#collectionPickerList > input[type=radio]:checked + label {
+	{
 	background: $primary-color;
-	cursor: pointer;
-	color: $secondary-color;
+	color: $secondary-color !important;
 }
 
 #unitPickerList > label,
 #categoryList > label,
 #collectionPickerList > label {
-	display: block;
 	margin: 0 0 20px 0;
 }
 
