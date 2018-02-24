@@ -1,0 +1,17 @@
+$primary-color: #fff;
+
+$secondary-color: #5A1DA9;
+
+$bg1: linear-gradient(135deg, #6713d2 0%, #cc208e 100%);
+;
+
+* {
+	color: $primary-color !important;
+}
+
+button:hover,
+li:hover,
+input,
+input:hover {
+	color: $secondary-color !important;
+}

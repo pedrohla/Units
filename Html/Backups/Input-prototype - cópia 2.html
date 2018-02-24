@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Protótipo de input e cálculo</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<form id="mainForm">
+			<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput"> </form>
+		<div id="unitPicker">celsius</div>
+		<ul id="convertedList">
+			<li>
+				<div class="converted" id="fromCelsius"></div>
+				<div class="unitType">celsius</div>
+			</li>
+			<li>
+				<div class="converted" id="fromFahrenheit"></div>
+				<div class="unitType">fahrenheit</div>
+			</li>
+			<li>
+				<div class="converted" id="fromKelvin"></div>
+				<div class="unitType">kelvin</div>
+			</li>
+		</ul>
+		<ul id="unitPickerList" style="display: none">
+			<li id="toCelsius">celsius</li>
+			<li id="toFahrenheit">fahrenheit</li>
+			<li id="toKelvin">kelvin</li>
+		</ul>
+	</div>
+</body>
+
+</html>
+<link rel="stylesheet" href="resources/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="resources/script.js"></script>

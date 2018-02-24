@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Unit conversion tool</title>
+</head>
+
+<body>
+	<div class="mainWrapper">
+		<header>
+			<button id="mainMenu" onclick="visibilityToggle('collectionPickerList')"></button>
+		</header>
+		<!--
+		<div class="wrapper"><button id="collectionPicker" onclick="visibilityToggle('collectionPickerList')">menu</button></div>
+		-->
+		<div class="horizontalScrollWrapper">
+			<form id="categoryList">
+				<input type="radio" name="category" value="" id="catTemp" checked="checked" onclick="changeCategory(this)" />
+				<label for="catTemp">temperature</label>
+				<input type="radio" name="category" value="" id="catWeight" onclick="changeCategory(this)" />
+				<label for="catWeight">weight</label>
+				<input type="radio" name="category" value="" id="catArea" onclick="changeCategory(this)" />
+				<label for="catArea">area</label>
+				<input type="radio" name="category" value="" id="catPower" onclick="changeCategory(this)" />
+				<label for="catPower">power</label>
+				<input type="radio" name="category" value="" id="catData" onclick="changeCategory(this)" />
+				<label for="catData">data</label>
+			</form>
+		</div>
+		<div class="wrapper">
+			<form id="mainForm">
+				<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
+			<div id="unitPicker" onclick="visibilityToggle('unitPickerList')">celsius</div>
+			<ul id="convertedList">
+				<li>
+					<div class="converted" id="fromCelsius"></div>
+					<div class="unitType">celsius</div>
+				</li>
+				<li>
+					<div class="converted" id="fromFahrenheit"></div>
+					<div class="unitType">fahrenheit</div>
+				</li>
+				<li>
+					<div class="converted" id="fromKelvin"></div>
+					<div class="unitType">kelvin</div>
+				</li>
+			</ul>
+		</div>
+		<form id="unitPickerList" style="display: none">
+			<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
+			<label for="toCelsius">celsius</label>
+			<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
+			<label for="toFahrenheit">fahrenheit</label>
+			<input type="radio" name="unit" value="" id="toKelvin" onclick="changeUnit(this)" />
+			<label for="toKelvin">kelvin</label>
+		</form>
+		<form id="collectionPickerList" style="display: none">
+			<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+			<label for="colAll">all</label>
+			<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+			<label for="colPracticalities">practicalities</label>
+			<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+			<label for="colPhysics">physics</label>
+			<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+			<label for="colMath">math</label>
+		</form>
+	</div>
+</body>
+
+</html>
+<link rel="stylesheet" href="resources/css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="resources/script/script.js"></script>

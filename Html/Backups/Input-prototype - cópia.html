@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Protótipo de input e cálculo</title>
+</head>
+
+<body>
+	<input type="text" class="mainInput" id="mainInput">
+	<div class="menuContainer">
+		<select name="unitsMenu" id="unitsMenu" size="99">
+			<option value="celsius">celsius</option>
+			<option value="kelvin">kelvin</option>
+			<option value="fahrenheit">fahrenheit</option>
+		</select>
+	</div>
+	<ul>
+		<li>
+			<div class="converted" id="toCelsius"></div>
+			<div class="unitType">celsius</div>
+		</li>
+		<li>
+			<div class="converted" id="toFahrenheit"></div>
+			<div class="unitType">fahrenheit</div>
+		</li>
+		<li>
+			<div class="converted" id="toKelvin"></div>
+			<div class="unitType">kelvin</div>
+		</li>
+	</ul>
+</body>
+
+</html>
+<link rel="stylesheet" href="resources/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="resources/script.js"></script>

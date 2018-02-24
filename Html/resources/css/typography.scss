@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'bal10light';
+	src: url('../font/bal10-light-webfont.woff2') format('woff2'),
+	url('../font/bal10-light-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+$font-stack: 'bal10light',
+sans-serif;
+
+* {
+	font-family: $font-stack !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	-webkit-font-smoothing: antialiased !important;
+}
