@@ -72,16 +72,24 @@ input:hover {
   cursor: pointer; }
 
 .btn-ic {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
   height: 44px;
   width: 44px;
-  padding: 0;
-  background-size: contain; }
+  padding: 0; }
 
-.ic-menu {
-  background: url(../svg/Icon/Menu.svg) no-repeat center center; }
+.btn-ic svg {
+  align-self: center; }
 
-.ic-menu:hover {
-  background: url(../svg/Icon/Menu2.svg) no-repeat center center; }
+.btn-ic-txt {
+  display: flex;
+  flex-flow: row;
+  padding: 9px 20px 9px 24px; }
+
+.btn-ic-txt span {
+  margin-right: 21px;
+  line-height: 22px; }
 
 #unitPicker,
 #unitPickerList > input[type=radio]:checked + label,
@@ -90,10 +98,13 @@ input:hover {
   border: 1px solid #fff; }
 
 .btn:hover,
+.btn:hover span,
+.btn:hover svg g,
 #categoryList > label:hover,
 #collectionPickerList > label:hover {
   background-color: #fff;
-  color: #5A1DA9 !important; }
+  color: #5A1DA9 !important;
+  fill: #5A1DA9 !important; }
 
 #unitPickerList > label,
 #categoryList > label,
@@ -115,13 +126,14 @@ body {
   padding: 0; }
 
 header {
-  margin: 12px 34px 0 -10px; }
+  margin: 14px 34px 0 -10px; }
 
 header .btn {
-  margin-top: 2px; }
+  margin-top: 0px; }
 
 h1 {
   font-size: 20px;
+  height: 24px;
   margin: auto; }
 
 .mainWrapper {
@@ -191,14 +203,14 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 19px; }
 
 #convertedList {
-  margin: 22px 0 0 0; }
+  margin: 29px 0 0 0; }
 
 #convertedList > li {
   display: flex;
   height: 48px;
   flex-direction: row;
   width: 100%;
-  margin: 12px 0;
+  margin: 4px 0 0 0;
   padding: 0;
   list-style: none; }
 

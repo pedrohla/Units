@@ -18,15 +18,16 @@ body {
 }
 
 header {
-	margin: 12px 34px 0 -10px;
+	margin: 14px 34px 0 -10px;
 }
 
 header .btn {
-	margin-top: 2px;
+	margin-top: 0px;
 }
 
 h1 {
 	font-size: 20px;
+	height: 24px;
 	margin: auto;
 }
 
@@ -107,7 +108,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #convertedList {
-	margin: 22px 0 0 0;
+	margin: 29px 0 0 0;
 }
 
 #convertedList > li {
@@ -115,7 +116,7 @@ input[type=number]::-webkit-outer-spin-button {
 	height: 48px;
 	flex-direction: row;
 	width: 100%;
-	margin: 12px 0;
+	margin: 4px 0 0 0;
 	padding: 0;
 	list-style: none;
 }

@@ -11,7 +11,15 @@
 	<div class="mainWrapper">
 		<header>
 			<div class="wrapper">
-				<button class="btn btn-ic ic-menu" id="mainMenu" onclick="visibilityToggle('collectionPickerList')"></button>
+				<button class="btn btn-ic" id="mainMenu" onclick="visibilityToggle('collectionPickerList')">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+						<g fill="#FFF" fill-rule="evenodd">
+						<rect width="18" height="1" y="18" rx=".5"/>
+						<rect width="12" height="1" y="4" rx=".5"/>
+						<rect width="24" height="1" y="11" rx=".5"/>
+					  </g>
+					</svg>
+				</button>
 				<h1>unit converter</h1>
 			</div>
 		</header>
@@ -37,7 +45,19 @@
 				<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
 		</div>
 		<div class="wrapper wrapper-centered">
-			<div id="unitPicker" class="btn" onclick="visibilityToggle('unitPickerList')">celsius</div>
+			<div id="unitPicker" class="btn btn-ic-txt" onclick="visibilityToggle('unitPickerList')"><span id="unitPickerContent">celsius</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+  <g fill="#FFF" fill-rule="evenodd" transform="matrix(-1 0 0 1 24 2)">
+    <g transform="matrix(-1 0 0 1 19 0)">
+      <rect width="18" height="1" y="6" rx=".5"/>
+      <rect width="1" height="9" x="3.136" y="-.864" rx=".5" transform="scale(1 -1) rotate(45 17.912 13.278)"/>
+    </g>
+    <g transform="matrix(1 0 0 -1 5 20)">
+      <rect width="18" height="1" y="6" rx=".5"/>
+      <rect width="1" height="9" x="3.149" y="-.901" rx=".5" transform="scale(1 -1) rotate(45 17.838 13.278)"/>
+    </g>
+  </g>
+</svg>
+			</div>
 		</div>
 		<ul id="convertedList">
 			<li>

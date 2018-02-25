@@ -17,7 +17,7 @@ $(document).ready(function () {
 	});
 });
 // Defines unit controller
-var unitChanger = document.getElementById("unitPicker");
+var unitChanger = document.getElementById("unitPickerContent");
 var inputOrigin = unitChanger.innerHTML;
 // Defines the input
 var theInput = document.getElementById("mainInput");

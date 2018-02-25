@@ -11,20 +11,27 @@
 }
 
 .btn-ic {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
 	height: 44px;
 	width: 44px;
 	padding: 0;
-	background-size: contain;
 }
 
-.btn-ic-text {}
-
-.ic-menu {
-	background: url(../svg/Icon/Menu.svg) no-repeat center center;
+.btn-ic svg {
+	align-self: center;
 }
 
-.ic-menu:hover {
-	background: url(../svg/Icon/Menu2.svg) no-repeat center center;
+.btn-ic-txt {
+	display: flex;
+	flex-flow: row;
+	padding: 9px 20px 9px 24px;
+}
+
+.btn-ic-txt span {
+	margin-right: 21px;
+	line-height: 22px;
 }
 
 #unitPicker,
@@ -35,11 +42,14 @@
 }
 
 .btn:hover,
+.btn:hover span,
+.btn:hover svg g,
 #categoryList > label:hover,
 #collectionPickerList > label:hover,
 	{
 	background-color: $primary-color;
 	color: $secondary-color !important;
+	fill: $secondary-color !important;
 }
 
 #unitPickerList > label,
