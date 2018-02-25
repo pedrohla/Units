@@ -1,12 +1,30 @@
 .btn {
-	padding: 13px 24px;
+	padding: 12px 24px 14px 24px;
 	display: inline-block;
+	box-sizing: border-box;
 	border: 1px solid transparent;
 	color: $primary-color;
 	border-radius: 40px;
 	font-size: 16px;
 	background: transparent;
 	cursor: pointer;
+}
+
+.btn-ic {
+	height: 44px;
+	width: 44px;
+	padding: 0;
+	background-size: contain;
+}
+
+.btn-ic-text {}
+
+.ic-menu {
+	background: url(../svg/Icon/Menu.svg) no-repeat center center;
+}
+
+.ic-menu:hover {
+	background: url(../svg/Icon/Menu2.svg) no-repeat center center;
 }
 
 #unitPicker,
@@ -20,7 +38,7 @@
 #categoryList > label:hover,
 #collectionPickerList > label:hover,
 	{
-	background: $primary-color;
+	background-color: $primary-color;
 	color: $secondary-color !important;
 }
 

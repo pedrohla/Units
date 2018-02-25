@@ -10,7 +10,10 @@
 <body>
 	<div class="mainWrapper">
 		<header>
-			<button class="btn" id="mainMenu" onclick="visibilityToggle('collectionPickerList')"></button>
+			<div class="wrapper">
+				<button class="btn btn-ic ic-menu" id="mainMenu" onclick="visibilityToggle('collectionPickerList')"></button>
+				<h1>unit converter</h1>
+			</div>
 		</header>
 		<!--
 		<div class="wrapper"><button id="collectionPicker" onclick="visibilityToggle('collectionPickerList')">menu</button></div>
@@ -29,25 +32,28 @@
 				<label class="btn" for="catData">data</label>
 			</form>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper wrapper-centered">
 			<form id="mainForm">
 				<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
-			<div id="unitPicker" class="btn" onclick="visibilityToggle('unitPickerList')">celsius</div>
-			<ul id="convertedList">
-				<li>
-					<div class="converted" id="fromCelsius">00000</div>
-					<div class="unitType">celsius</div>
-				</li>
-				<li>
-					<div class="converted" id="fromFahrenheit">00000</div>
-					<div class="unitType">fahrenheit</div>
-				</li>
-				<li>
-					<div class="converted" id="fromKelvin">00000</div>
-					<div class="unitType">kelvin</div>
-				</li>
-			</ul>
 		</div>
+		<div class="wrapper wrapper-centered">
+			<div id="unitPicker" class="btn" onclick="visibilityToggle('unitPickerList')">celsius</div>
+		</div>
+		<ul id="convertedList">
+			<li>
+				<div class="converted" id="fromCelsius">00000</div>
+				<div class="unitType">celsius</div>
+			</li>
+			<li>
+				<div class="converted" id="fromFahrenheit">00000</div>
+				<div class="unitType">fahrenheit</div>
+			</li>
+			<li>
+				<div class="converted" id="fromKelvin">00000</div>
+				<div class="unitType">kelvin</div>
+			</li>
+		</ul>
+
 		<form id="unitPickerList" style="display: none">
 			<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
 			<label class="btn" for="toCelsius">celsius</label>
