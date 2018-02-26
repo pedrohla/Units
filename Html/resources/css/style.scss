@@ -76,6 +76,7 @@ h1 {
 	border-bottom: 1px solid $primary-color;
 	background: none;
 	color: $primary-color !important;
+	text-overflow: ellipsis !important;
 }
 
 #mainInput,
@@ -108,6 +109,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #convertedList {
+	width: 100%;
 	margin: 29px 0 0 0;
 }
 
@@ -131,6 +133,12 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-right: 24px;
 	text-align: right !important;
 	letter-spacing: 1.85px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.converted:empty:not(:focus):before {
+	content: "00000";
 }
 
 #unitPickerList,

@@ -174,7 +174,8 @@ h1 {
   margin: 21px 0 0 0;
   border-bottom: 1px solid #fff;
   background: none;
-  color: #fff !important; }
+  color: #fff !important;
+  text-overflow: ellipsis !important; }
 
 #mainInput,
 #mainInput:focus,
@@ -203,6 +204,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 19px; }
 
 #convertedList {
+  width: 100%;
   margin: 29px 0 0 0; }
 
 #convertedList > li {
@@ -222,7 +224,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 21px;
   margin-right: 24px;
   text-align: right !important;
-  letter-spacing: 1.85px; }
+  letter-spacing: 1.85px;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.converted:empty:not(:focus):before {
+  content: "00000"; }
 
 #unitPickerList,
 #collectionPickerList {
