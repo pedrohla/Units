@@ -24,7 +24,8 @@ var theInput = document.getElementById("mainInput");
 theInput.value = "";
 // Defines the munit list picker
 var menuList = document.getElementById("unitPickerList");
-menuList.style.display = "none";
+var menuContainer = document.getElementById("unitPickerContainer");
+menuContainer.style.display = "none";
 /* Runs the correct conversion function when typing */
 var calculate = function () {
 	if (inputOrigin === "celsius") {
@@ -81,27 +82,27 @@ var changeUnit = function (ele) {
 		unitChanger.innerHTML = "celsius";
 		inputOrigin = "celsius";
 		fromCelsius(theInput.value);
-		menuList.style.display = "none";
+		menuContainer.style.display = "none";
 	} else if (id == "toFahrenheit") {
 		unitChanger.innerHTML = "fahrenheit";
 		inputOrigin = "fahrenheit";
 		fromFahrenheit(theInput.value);
-		menuList.style.display = "none";
+		menuContainer.style.display = "none";
 	} else if (id == "toKelvin") {
 		unitChanger.innerHTML = "kelvin";
 		inputOrigin = "kelvin";
 		fromKelvin(theInput.value);
-		menuList.style.display = "none";
+		menuContainer.style.display = "none";
 	} else if (id == "toKilos") {
 		unitChanger.innerHTML = "kilos";
 		inputOrigin = "kilos";
 		fromKilos(theInput.value);
-		menuList.style.display = "none";
+		menuContainer.style.display = "none";
 	} else if (id == "toPounds") {
 		unitChanger.innerHTML = "pounds";
 		inputOrigin = "pounds";
 		fromPounds(theInput.value);
-		menuList.style.display = "none";
+		menuContainer.style.display = "none";
 	} else {
 		return;
 	}

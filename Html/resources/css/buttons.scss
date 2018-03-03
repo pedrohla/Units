@@ -23,21 +23,35 @@
 	align-self: center;
 }
 
-.btn-ic-txt {
+.btn-ic-txt,
+.btn-menu {
 	display: flex;
 	flex-flow: row;
+}
+
+.btn-ic-txt {
 	padding: 9px 20px 9px 24px;
 }
 
+.btn-menu {
+	padding: 12px 24px 12px 20px;
+	margin-left: $mainPadding*-0.833 !important;
+}
+
 .btn-ic-txt span {
-	margin-right: 21px;
+	margin-right: 20px;
 	line-height: 22px;
+}
+
+.btn-menu span {
+	margin-left: 20px;
+	line-height: 24px;
 }
 
 #unitPicker,
 #unitPickerList input[type=radio]:checked + label,
 #categoryList input[type=radio]:checked + label,
-#collectionPickerList input[type=radio]:checked + label {
+#mainMenu input[type=radio]:checked + label {
 	border: 1px solid $primary-color;
 }
 
@@ -45,8 +59,9 @@
 .btn-ic:hover,
 .btn:hover span,
 .btn:hover svg g,
+.btn:hover svg path,
 #categoryList label:hover,
-#collectionPickerList label:hover,
+#mainMenu label:hover,
 	{
 	background-color: $primary-color;
 	color: $secondary-color !important;
@@ -55,7 +70,7 @@
 
 #unitPickerList label,
 #categoryList label,
-#collectionPickerList label {
+#mainMenu label {
 	margin: 0 0 20px 0;
 }
 

@@ -11,8 +11,8 @@
 	<div class="mainWrapper">
 		<header>
 			<div class="wrapper">
-				<button class="btn btn-ic" id="mainMenu" onclick="visibilityToggle('collectionPickerList')">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')">
+					<svg width="24" height="24" viewbox="0 0 24 24">
 						<g fill="#FFF" fill-rule="evenodd">
 						<rect width="18" height="1" y="18" rx=".5"/>
 						<rect width="12" height="1" y="4" rx=".5"/>
@@ -20,12 +20,9 @@
 					  </g>
 					</svg>
 				</button>
-				<h1>unit converter</h1>
+				<h2>unit converter</h2>
 			</div>
 		</header>
-		<!--
-		<div class="wrapper"><button id="collectionPicker" onclick="visibilityToggle('collectionPickerList')">menu</button></div>
-		-->
 		<div class="horizontalScrollWrapper">
 			<form id="categoryList">
 				<input type="radio" name="category" value="" id="catTemp" checked="checked" onclick="changeCategory(this)" />
@@ -45,8 +42,8 @@
 				<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
 		</div>
 		<div class="wrapper wrapper-centered">
-			<div id="unitPicker" class="btn btn-ic-txt" onclick="visibilityToggle('unitPickerList')"><span id="unitPickerContent">celsius</span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+			<div id="unitPicker" class="btn btn-ic-txt" onclick="visibilityToggle('unitPickerContainer')"><span id="unitPickerContent">celsius</span>
+				<svg width="24" height="24" viewbox="0 0 24 24">
 <g fill="#FFF" fill-rule="evenodd" transform="matrix(-1 0 0 1 24 2)">
 	<g transform="matrix(-1 0 0 1 19 0)">
 		<rect width="18" height="1" y="6" rx=".5" />
@@ -76,9 +73,9 @@
 				</li>
 			</ul>
 		</div>
-		<div id="unitPickerList" style="display: none" class="wrapper wrapper-centered">
-			<button class="btn btn-ic" id="closeList" onclick="visibilityToggle('unitPickerList')">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+		<div id="unitPickerContainer" class="wrapper wrapper-centered">
+			<button class="btn btn-ic" id="closeList" onclick="visibilityToggle('unitPickerContainer')">
+					<svg width="24" height="24" viewbox="0 0 24 24">
   <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
     <rect width="23" height="1" x="1" y="10" rx=".5"/>
     <rect width="1" height="15" x="5.157" y="8.056" rx=".5" transform="rotate(-45 5.657 15.556)"/>
@@ -86,7 +83,7 @@
   </g>
 </svg>
 				</button>
-			<form>
+			<form id="unitPickerList">
 				<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
 				<label class="btn" for="toCelsius">celsius</label>
 				<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
@@ -95,16 +92,85 @@
 				<label class="btn" for="toKelvin">kelvin</label>
 			</form>
 		</div>
-		<div class="wrapper wrapper-centered">
-			<form id="collectionPickerList" style="display: none">
-				<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-				<label class="btn" for="colAll">all</label>
-				<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-				<label class="btn" for="colPracticalities">practicalities</label>
-				<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-				<label class="btn" for="colPhysics">physics</label>
-				<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-				<label class="btn" for="colMath">math</label>
+		<div id="mainMenuContainer" style="display: none" class="wrapper">
+			<div>
+				<svg id="appLogo" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewbox="0 0 160 160">
+				<g fill="none" fill-rule="evenodd" transform="translate(-31 -30)">
+					<rect width="103.945" height="1" x="65.825" y="117.298" fill="#FFF" transform="rotate(-45 117.798 117.798)" />
+					<rect width="96.167" height="1" x="76.214" y="124.798" fill="#FFF" transform="rotate(-45 124.298 125.298)" />
+					<rect width="83.439" height="1" x="90.078" y="132.298" fill="#FFF" transform="rotate(-45 131.798 132.798)" />
+					<rect width="60.104" height="1" x="109.302" y="139.354" fill="#FFF" transform="rotate(-45 139.354 139.854)" />
+					<path stroke="#FFF" stroke-linecap="round" stroke-width="2" d="M183.561655,136 C172.853905,166.295002 143.961689,188 110,188 C66.9217895,188 32,153.07821 32,110 C32,66.9217895 66.9217895,32 110,32 C144.334215,32 173.487132,54.1837736 183.90743,85" />
+					<path fill="#FFF" d="M114.032058,46.7880487 C127.421445,47.363778 140.518509,52.8239901 150.52303,62.8285114 C171.968443,84.2739238 171.968443,119.043807 150.52303,140.48922 C140.395432,150.616818 127.296207,155.961657 114.032058,156.523737 L114.032058,179.319574 C70.9538478,179.319574 36.0320583,144.397784 36.0320583,101.319574 C36.0320583,58.2413635 70.9538478,23.319574 114.032058,23.319574 L114.032058,46.7880487 Z M114.032058,48.7899584 L114.032058,154.521862 C126.784004,153.961021 139.371754,148.812069 149.108817,139.075006 C169.773181,118.410642 169.773181,84.9070888 149.108817,64.242725 C139.489897,54.6238055 126.904079,49.3643595 114.032058,48.7899584 Z M114.032058,46.7880487 C105.220401,46.4091569 96.2821374,48.145762 88.0154138,52.0948237 C87.5170712,52.3328849 87.3060714,52.929858 87.5441325,53.4282006 C87.7821937,53.9265432 88.3791668,54.137543 88.8775094,53.8994819 C96.8697338,50.08155 105.513568,48.4098293 114.032058,48.7899584 L114.032058,46.7880487 Z M114.032058,154.521862 C99.7213426,155.151259 85.2038362,150.002307 74.2765355,139.075006 C58.1078411,122.906312 54.2703475,98.3691971 64.2470739,78.1982337 C64.4919256,77.7031922 64.2891066,77.1033902 63.7940651,76.8585386 C63.2990236,76.6136869 62.6992216,76.8165059 62.45437,77.3115474 C52.1001818,98.2456637 56.082612,123.70951 72.8623219,140.48922 C84.1801358,151.807034 99.2090805,157.151873 114.032058,156.523737 L114.032058,154.521862 Z" transform="rotate(45 101.32 101.32)" />
+					</g>
+				</svg>
+			</div>
+			<h1>unit converter</h1>
+			<div>
+				<svg class="separator" width="90" height="1" viewbox="0 0 90 1">
+					<path fill="none" stroke="#FFF" stroke-linecap="square" d="M0,1 L90,1"/>
+				</svg>
+			</div>
+			<button class="btn btn-ic" id="closeMainMenu" onclick="visibilityToggle('mainMenuContainer')">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+  <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
+    <rect width="23" height="1" y="10" rx=".5" transform="matrix(-1 0 0 1 23 0)"/>
+    <rect width="1" height="15" x="17.843" y="8.056" rx=".5" transform="scale(-1 1) rotate(-45 0 59.84)"/>
+    <rect width="1" height="15" x="17.843" y="-1.843" rx=".5" transform="scale(1 -1) rotate(45 32 0)"/>
+  </g>
+</svg>
+			</button>
+			<form id="mainMenu">
+				<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<label class="btn btn-menu" for="colAll">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+						<g fill="#FFF" fill-rule="evenodd" stroke="#FFF" stroke-width=".5" transform="translate(1 1)">
+							<circle cx="1" cy="1" r="1"/>
+							<circle cx="11" cy="1" r="1"/>
+							<circle cx="21" cy="1" r="1"/>
+							<circle cx="1" cy="21" r="1"/>
+							<circle cx="11" cy="21" r="1"/>
+							<circle cx="21" cy="21" r="1"/>
+							<circle cx="1" cy="11" r="1"/>
+							<circle cx="11" cy="11" r="1"/>
+							<circle cx="21" cy="11" r="1"/>
+						</g>
+					</svg>
+					<span>all</span>
+				</label>
+				<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<label class="btn btn-menu" for="colPracticalities">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+						<g fill="#FFF" fill-rule="evenodd" transform="translate(1 1)">
+							<rect width="30" height="1" x="-4" y="10.5" rx=".5" transform="rotate(135 11 11)"/>
+							<rect width="11" height="1" x="12.218" y="17.218" transform="rotate(-135 17.718 17.718)"/>
+							<rect width="11" height="1" x="-1.251" y="3.749" transform="rotate(-135 4.25 4.25)"/>
+							<path d="M2.5,-2 L2.5,-2 C2.77614237,-2 3,-1.77614237 3,-1.5 L3,3 L2,3 L2,-1.5 C2,-1.77614237 2.22385763,-2 2.5,-2 Z" transform="rotate(-90 2.5 .5)"/>
+							<path d="M0.5,0 L0.5,0 C0.776142375,-5.07265313e-17 1,0.223857625 1,0.5 L1,5 L0,5 L0,0.5 C-3.38176876e-17,0.223857625 0.223857625,5.07265313e-17 0.5,0 Z"/>
+							<path d="M2.5,19 L2.5,19 C2.77614237,19 3,19.2238576 3,19.5 L3,24 L2,24 L2,19.5 C2,19.2238576 2.22385763,19 2.5,19 Z" transform="matrix(0 1 1 0 -19 19)"/>
+							<path d="M0.5,17 L0.5,17 C0.776142375,17 1,17.2238576 1,17.5 L1,22 L0,22 L0,17.5 C-3.38176876e-17,17.2238576 0.223857625,17 0.5,17 Z" transform="matrix(1 0 0 -1 0 39)"/>
+							<path d="M19.5,-2 L19.5,-2 C19.7761424,-2 20,-1.77614237 20,-1.5 L20,3 L19,3 L19,-1.5 C19,-1.77614237 19.2238576,-2 19.5,-2 Z" transform="matrix(0 -1 -1 0 20 20)"/>
+							<path d="M21.5,0 L21.5,0 C21.7761424,-5.07265313e-17 22,0.223857625 22,0.5 L22,5 L21,5 L21,0.5 C21,0.223857625 21.2238576,5.07265313e-17 21.5,0 Z" transform="matrix(-1 0 0 1 43 0)"/>
+							<path d="M19.5,19 L19.5,19 C19.7761424,19 20,19.2238576 20,19.5 L20,24 L19,24 L19,19.5 C19,19.2238576 19.2238576,19 19.5,19 Z" transform="rotate(90 19.5 21.5)"/>
+							<path d="M21.5,17 L21.5,17 C21.7761424,17 22,17.2238576 22,17.5 L22,22 L21,22 L21,17.5 C21,17.2238576 21.2238576,17 21.5,17 Z" transform="rotate(180 21.5 19.5)"/>
+						</g>
+					</svg>
+					<span>practicalities</span>
+				</label>
+				<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<label class="btn btn-menu" for="colPhysics">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+						<path fill="#FFF" d="M1.4979466,12.0452679 L1.45267873,12.5432145 L0.456785524,12.4526787 L0.502053397,11.9547321 C1.19109097,4.3753188 2.95259952,0.5 6,0.5 C8.87679075,0.5 10.1395587,3.27808945 12.4823819,11.8684413 C14.6395587,19.7780894 15.8767907,22.5 18,22.5 C20.2859329,22.5 21.8577576,19.0419855 22.5020534,11.9547321 L22.5473213,11.4567855 L23.5432145,11.5473213 L23.4979466,12.0452679 C22.808909,19.6246812 21.0474005,23.5 18,23.5 C15.1232093,23.5 13.8604413,20.7219106 11.5176181,12.1315587 C9.36044132,4.22191055 8.12320925,1.5 6,1.5 C3.71406715,1.5 2.14224236,4.95801454 1.4979466,12.0452679 Z"/>
+					</svg>
+					<span>physics</span>
+				</label>
+				<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<label class="btn btn-menu" for="colMath">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+<path fill="#FFF" d="M22.2731669,5 L21.2731669,5 L21.2731669,2 C21.2731669,1.72385763 21.0493092,1.5 20.7731669,1.5 L2.03371857,1.5 C1.7575762,1.5 1.53371857,1.72385763 1.53371857,2 C1.53371857,2.12438302 1.58007946,2.24430041 1.66374854,2.3363364 L9.53161618,10.9909908 C10.051736,11.5631226 10.051736,12.4368774 9.53161618,13.0090092 L1.66374854,21.6636636 C1.47799507,21.8679924 1.49305337,22.1842166 1.69738218,22.36997 C1.78941816,22.4536391 1.90933555,22.5 2.03371857,22.5 L20.7731669,22.5 C21.0493092,22.5 21.2731669,22.2761424 21.2731669,22 L21.2731669,19 L22.2731669,19 L22.2731669,22 C22.2731669,22.8284271 21.601594,23.5 20.7731669,23.5 L2.03371857,23.5 C1.66056951,23.5 1.30081733,23.3609173 1.02470938,23.1099101 C0.411722955,22.5526497 0.366548075,21.6039772 0.923808464,20.9909908 L8.79167611,12.3363364 C8.9650494,12.1456258 8.9650494,11.8543742 8.79167611,11.6636636 L0.923808464,3.00900919 C0.672801238,2.73290124 0.533718574,2.37314907 0.533718574,2 C0.533718574,1.17157288 1.20529145,0.5 2.03371857,0.5 L20.7731669,0.5 C21.601594,0.5 22.2731669,1.17157288 22.2731669,2 L22.2731669,5 Z" />
+</svg>
+					<span>math</span>
+				</label>
 			</form>
 		</div>
 	</div>
