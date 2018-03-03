@@ -58,7 +58,7 @@ var visibilityToggle = function (ele) {
 	var menu = document.getElementById(ele);
 	var menuVisibility = menu.style.display;
 	if (menuVisibility === "none") {
-		menu.style.display = "block";
+		menu.style.display = "flex";
 	} else {
 		menu.style.display = "none";
 	}

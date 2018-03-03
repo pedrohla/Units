@@ -76,24 +76,37 @@
 				</li>
 			</ul>
 		</div>
-		<form id="unitPickerList" style="display: none">
-			<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
-			<label class="btn" for="toCelsius">celsius</label>
-			<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
-			<label class="btn" for="toFahrenheit">fahrenheit</label>
-			<input type="radio" name="unit" value="" id="toKelvin" onclick="changeUnit(this)" />
-			<label class="btn" for="toKelvin">kelvin</label>
-		</form>
-		<form id="collectionPickerList" style="display: none">
-			<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-			<label class="btn" for="colAll">all</label>
-			<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-			<label class="btn" for="colPracticalities">practicalities</label>
-			<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-			<label class="btn" for="colPhysics">physics</label>
-			<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
-			<label class="btn" for="colMath">math</label>
-		</form>
+		<div id="unitPickerList" style="display: none" class="wrapper wrapper-centered">
+			<button class="btn btn-ic" id="closeList" onclick="visibilityToggle('unitPickerList')">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+  <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
+    <rect width="23" height="1" x="1" y="10" rx=".5"/>
+    <rect width="1" height="15" x="5.157" y="8.056" rx=".5" transform="rotate(-45 5.657 15.556)"/>
+    <rect width="1" height="15" x="5.157" y="-1.843" rx=".5" transform="rotate(-135 5.657 5.657)"/>
+  </g>
+</svg>
+				</button>
+			<form>
+				<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
+				<label class="btn" for="toCelsius">celsius</label>
+				<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
+				<label class="btn" for="toFahrenheit">fahrenheit</label>
+				<input type="radio" name="unit" value="" id="toKelvin" onclick="changeUnit(this)" />
+				<label class="btn" for="toKelvin">kelvin</label>
+			</form>
+		</div>
+		<div class="wrapper wrapper-centered">
+			<form id="collectionPickerList" style="display: none">
+				<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+				<label class="btn" for="colAll">all</label>
+				<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+				<label class="btn" for="colPracticalities">practicalities</label>
+				<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+				<label class="btn" for="colPhysics">physics</label>
+				<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('collectionPickerList');" />
+				<label class="btn" for="colMath">math</label>
+			</form>
+		</div>
 	</div>
 </body>
 
