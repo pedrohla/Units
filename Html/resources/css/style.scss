@@ -9,11 +9,28 @@ $mainPadding: 24px;
 	width: device-width;
 }
 
-body {
+
+.background {
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
 	background: $bg1;
+	position: fixed;
+	z-index: -10;
+	top: 0;
+	left: 0;
+}
+
+html {
+	background: black;
+}
+
+body {
+	//height: 100%;
+	width: 100vw;
+	/*
+	background: $bg1;
+	background-attachment: fixed;
+	*/
 	margin: 0;
 	padding: 0;
 }
@@ -33,7 +50,7 @@ header .btn {
 .mainWrapper {
 	display: flex;
 	flex-direction: column;
-	max-width: 100vw;
+	max-width: 100vw; //overflow-y: scroll;
 }
 
 .wrapper,
@@ -41,9 +58,9 @@ header .btn {
 	display: flex;
 	flex-direction: row;
 	padding: 0 $mainPadding;
+	box-sizing: border-box;
 	max-width: 100vw;
-	justify-content: flex-start;
-	overflow-y: scroll;
+	justify-content: flex-start; //overflow-y: visible;
 }
 
 .wrapper-centered {
@@ -68,10 +85,10 @@ header .btn {
 	box-sizing: border-box;
 	width: 100%;
 	padding: 10px $mainPadding;
-	font-size: 36px;
-	letter-spacing: 2.7px;
+	font-size: 38px;
+	letter-spacing: 4px;
 	text-align: center;
-	margin: 21px 0 0 0;
+	margin: 24px 0 0 0;
 	border-bottom: 1px solid $primary-color;
 	background: none;
 	color: $primary-color !important;
@@ -131,7 +148,7 @@ input[type=number]::-webkit-outer-spin-button {
 	font-size: 21px;
 	margin-right: $mainPadding;
 	text-align: right !important;
-	letter-spacing: 1.85px;
+	letter-spacing: 2.5px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
@@ -148,10 +165,11 @@ input[type=number]::-webkit-outer-spin-button {
 	top: 0;
 	margin: 0;
 	width: 100%;
-	height: 100vh;
+	min-height: 100%;
 	padding: $mainPadding $mainPadding 0 $mainPadding;
 	list-style: none;
 	background: $bg1;
+	background-attachment: fixed;
 }
 
 #unitPickerContainer {
@@ -159,7 +177,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #mainMenuContainer {
-	padding: $mainPadding*1.833 $mainPadding*1.833 0 $mainPadding*1.833;
+	padding: $mainPadding*1.25 $mainPadding*1.85 0 $mainPadding*1.85;
 }
 
 #unitPickerContainer form,
@@ -177,11 +195,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #mainMenuContainer .separator {
-	margin-top: 32px;
+	margin-top: 28px;
 }
 
 #mainMenu {
-	margin-top: 48px;
+	margin-top: 38px;
 }
 
 #unitPickerContainer form .btn {
@@ -189,17 +207,23 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #closeList {
-	position: fixed;
-	left: 16px;
+	position: absolute;
+	top: $mainPadding*0.6;
+	left: $mainPadding*0.6;
 }
 
 #closeMainMenu {
-	position: fixed;
-	top: calc(50% - 22px);
-	right: 16px;
+	position: absolute;
+	top: $mainPadding*0.6;
+	right: $mainPadding*0.6;
 }
 
 //Category List
+#appLogo {
+	width: 148px;
+	height: 148px;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
@@ -214,4 +238,22 @@ input[type=number]::-webkit-outer-spin-button {
 
 #categoryList > label:first-of-type {
 	margin: 0;
+}
+
+//Media Queries
+@media only screen and (max-device-width: 320px) {
+	#mainInput {
+		font-size: 34px;
+		letter-spacing: 3px;
+	}
+}
+
+@media only screen and (min-device-width: 400px) {
+	#mainInput {
+		font-size: 44px;
+		margin: 28px 0 0 0;
+	}
+	#convertedList {
+		margin: 40px 0 0 0;
+	}
 }

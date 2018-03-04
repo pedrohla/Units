@@ -33,7 +33,7 @@ var calculate = function () {
 	} else if (inputOrigin === "fahrenheit") {
 		fromFahrenheit(theInput.value)
 	} else if (inputOrigin === "kelvin") {
-		fromKelvin(etheInput.value)
+		fromKelvin(theInput.value)
 	} else if (inputOrigin === "kilos") {
 		fromKilos(theInput.value)
 	} else if (inputOrigin === "pounds") {
@@ -171,8 +171,8 @@ function fromCelsius(valNum) {
 		//clearField();
 	} else {
 		document.getElementById("fromCelsius").innerHTML = valNum;
-		document.getElementById("fromFahrenheit").innerHTML = (valNum * 1.8) + 32;
-		document.getElementById("fromKelvin").innerHTML = valNum + 273.15;
+		document.getElementById("fromFahrenheit").innerHTML = ((valNum * 1.8) + 32).toFixed(2);
+		document.getElementById("fromKelvin").innerHTML = (valNum + 273.15).toFixed(2);
 	}
 }
 
@@ -182,8 +182,8 @@ function fromKelvin(valNum) {
 	if (test) {
 		//clearField();
 	} else {
-		document.getElementById("fromCelsius").innerHTML = valNum - 273.15;
-		document.getElementById("fromFahrenheit").innerHTML = ((valNum - 273.15) * 1.8) + 32;
+		document.getElementById("fromCelsius").innerHTML = (valNum - 273.15).toFixed(2);
+		document.getElementById("fromFahrenheit").innerHTML = (((valNum - 273.15) * 1.8) + 32).toFixed(2);
 		document.getElementById("fromKelvin").innerHTML = valNum;
 	}
 }
@@ -194,9 +194,9 @@ function fromFahrenheit(valNum) {
 	if (test) {
 		//clearField();
 	} else {
-		document.getElementById("fromCelsius").innerHTML = (valNum - 32) / 1.8;
+		document.getElementById("fromCelsius").innerHTML = ((valNum - 32) / 1.8).toFixed(2);
 		document.getElementById("fromFahrenheit").innerHTML = valNum;
-		document.getElementById("fromKelvin").innerHTML = ((valNum - 32) / 1.8) + 273.15;
+		document.getElementById("fromKelvin").innerHTML = (((valNum - 32) / 1.8) + 273.15).toFixed(2);
 	}
 }
 
@@ -207,7 +207,7 @@ function fromKilos(valNum) {
 		//clearField();
 	} else {
 		document.getElementById("fromKilos").innerHTML = valNum;
-		document.getElementById("fromPounds").innerHTML = valNum * 2.20462262185;
+		document.getElementById("fromPounds").innerHTML = (valNum * 2.20462262185).toFixed(2);
 	}
 }
 
@@ -217,7 +217,7 @@ function fromPounds(valNum) {
 	if (test) {
 		//clearField();
 	} else {
-		document.getElementById("fromKilos").innerHTML = valNum * 0.45359237;
+		document.getElementById("fromKilos").innerHTML = (valNum * 0.45359237).toFixed(2);
 		document.getElementById("fromPounds").innerHTML = valNum;
 	}
 }

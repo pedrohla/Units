@@ -62,8 +62,14 @@
 .btn:hover svg path,
 #categoryList label:hover,
 #mainMenu label:hover,
-	{
-	background-color: $primary-color;
+.btn:active,
+.btn-ic:active,
+.btn:active span,
+.btn:active svg g,
+.btn:active svg path,
+#categoryList label:active,
+#mainMenu label:active {
+	background-color: $primary-color !important;
 	color: $secondary-color !important;
 	fill: $secondary-color !important;
 }
