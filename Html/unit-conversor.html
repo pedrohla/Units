@@ -11,7 +11,7 @@
 	<div class="mainWrapper">
 		<header>
 			<div class="wrapper">
-				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')" ontouchstart="">
+				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')">
 					<svg width="24" height="24" viewbox="0 0 24 24">
 						<g fill="#FFF" fill-rule="evenodd">
 						<rect width="18" height="1" y="18" rx=".5"/>
@@ -92,7 +92,7 @@
 				<label class="btn" for="toKelvin">kelvin</label>
 			</form>
 		</div>
-		<div id="mainMenuContainer" style="display: none" class="wrapper">
+		<div id="mainMenuContainer" class="wrapper">
 			<div>
 				<svg id="appLogo" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewbox="0 0 160 160">
 				<g fill="none" fill-rule="evenodd" transform="translate(-31 -30)">
@@ -121,7 +121,7 @@
 </svg>
 			</button>
 			<form id="mainMenu">
-				<input type="radio" name="unit" value="" id="colAll" checked="checked" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<input type="radio" name="unit" value="" id="colAll" class="mainMenuButton" checked="checked" />
 				<label class="btn btn-menu" for="colAll">
 					<svg width="24" height="24" viewbox="0 0 24 24">
 						<g fill="#FFF" fill-rule="evenodd" stroke="#FFF" stroke-width=".5" transform="translate(1 1)">
@@ -138,7 +138,7 @@
 					</svg>
 					<span>all</span>
 				</label>
-				<input type="radio" name="unit" value="" id="colPracticalities" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<input type="radio" name="unit" value="" id="colPracticalities" class="mainMenuButton" onclick="changeCollection(this);" />
 				<label class="btn btn-menu" for="colPracticalities">
 					<svg width="24" height="24" viewbox="0 0 24 24">
 						<g fill="#FFF" fill-rule="evenodd" transform="translate(1 1)">
@@ -157,14 +157,14 @@
 					</svg>
 					<span>practicalities</span>
 				</label>
-				<input type="radio" name="unit" value="" id="colPhysics" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<input type="radio" name="unit" value="" id="colPhysics" class="mainMenuButton" onclick="changeCollection(this);" />
 				<label class="btn btn-menu" for="colPhysics">
 					<svg width="24" height="24" viewbox="0 0 24 24">
 						<path fill="#FFF" d="M1.4979466,12.0452679 L1.45267873,12.5432145 L0.456785524,12.4526787 L0.502053397,11.9547321 C1.19109097,4.3753188 2.95259952,0.5 6,0.5 C8.87679075,0.5 10.1395587,3.27808945 12.4823819,11.8684413 C14.6395587,19.7780894 15.8767907,22.5 18,22.5 C20.2859329,22.5 21.8577576,19.0419855 22.5020534,11.9547321 L22.5473213,11.4567855 L23.5432145,11.5473213 L23.4979466,12.0452679 C22.808909,19.6246812 21.0474005,23.5 18,23.5 C15.1232093,23.5 13.8604413,20.7219106 11.5176181,12.1315587 C9.36044132,4.22191055 8.12320925,1.5 6,1.5 C3.71406715,1.5 2.14224236,4.95801454 1.4979466,12.0452679 Z"/>
 					</svg>
 					<span>physics</span>
 				</label>
-				<input type="radio" name="unit" value="" id="colMath" onclick="changeCollection(this); visibilityToggle('mainMenuContainer');" />
+				<input type="radio" name="unit" value="" id="colMath" class="mainMenuButton" onclick="changeCollection(this);" />
 				<label class="btn btn-menu" for="colMath">
 					<svg width="24" height="24" viewbox="0 0 24 24">
 <path fill="#FFF" d="M22.2731669,5 L21.2731669,5 L21.2731669,2 C21.2731669,1.72385763 21.0493092,1.5 20.7731669,1.5 L2.03371857,1.5 C1.7575762,1.5 1.53371857,1.72385763 1.53371857,2 C1.53371857,2.12438302 1.58007946,2.24430041 1.66374854,2.3363364 L9.53161618,10.9909908 C10.051736,11.5631226 10.051736,12.4368774 9.53161618,13.0090092 L1.66374854,21.6636636 C1.47799507,21.8679924 1.49305337,22.1842166 1.69738218,22.36997 C1.78941816,22.4536391 1.90933555,22.5 2.03371857,22.5 L20.7731669,22.5 C21.0493092,22.5 21.2731669,22.2761424 21.2731669,22 L21.2731669,19 L22.2731669,19 L22.2731669,22 C22.2731669,22.8284271 21.601594,23.5 20.7731669,23.5 L2.03371857,23.5 C1.66056951,23.5 1.30081733,23.3609173 1.02470938,23.1099101 C0.411722955,22.5526497 0.366548075,21.6039772 0.923808464,20.9909908 L8.79167611,12.3363364 C8.9650494,12.1456258 8.9650494,11.8543742 8.79167611,11.6636636 L0.923808464,3.00900919 C0.672801238,2.73290124 0.533718574,2.37314907 0.533718574,2 C0.533718574,1.17157288 1.20529145,0.5 2.03371857,0.5 L20.7731669,0.5 C21.601594,0.5 22.2731669,1.17157288 22.2731669,2 L22.2731669,5 Z" />

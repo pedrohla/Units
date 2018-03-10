@@ -24,8 +24,6 @@ var theInput = document.getElementById("mainInput");
 theInput.value = "";
 // Defines the munit list picker
 var menuList = document.getElementById("unitPickerList");
-var menuContainer = document.getElementById("unitPickerContainer");
-menuContainer.style.display = "none";
 /* Runs the correct conversion function when typing */
 var calculate = function () {
 	if (inputOrigin === "celsius") {
@@ -55,15 +53,37 @@ theInput.oninput = function () {
 	}
 };
 */
-var visibilityToggle = function (ele) {
+function visibilityToggle(ele) {
 	var menu = document.getElementById(ele);
-	var menuVisibility = menu.style.display;
+	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
 	if (menuVisibility === "none") {
 		menu.style.display = "flex";
 	} else {
 		menu.style.display = "none";
 	}
 };
+
+function mainMenuVisibilityToggle() {
+	var menu = document.getElementById('mainMenuContainer');
+	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
+	var windowSize = screen.width;
+	if (windowSize < 800) {
+		if (menuVisibility === "none") {
+			menu.style.display = "flex";
+		} else {
+			menu.style.display = "none";
+		}
+	} else {
+		return;
+	}
+};
+
+//Adds event listeners to main menu buttons
+var menuButtons = document.getElementsByClassName("mainMenuButton");
+
+for (var i = 0; i < menuButtons.length; i++) {
+	menuButtons[i].addEventListener('click', mainMenuVisibilityToggle);
+}
 
 /*
 unitChanger.onclick = function () {
@@ -82,27 +102,27 @@ var changeUnit = function (ele) {
 		unitChanger.innerHTML = "celsius";
 		inputOrigin = "celsius";
 		fromCelsius(theInput.value);
-		menuContainer.style.display = "none";
+		visibilityToggle("unitPickerContainer");
 	} else if (id == "toFahrenheit") {
 		unitChanger.innerHTML = "fahrenheit";
 		inputOrigin = "fahrenheit";
 		fromFahrenheit(theInput.value);
-		menuContainer.style.display = "none";
+		visibilityToggle("unitPickerContainer");
 	} else if (id == "toKelvin") {
 		unitChanger.innerHTML = "kelvin";
 		inputOrigin = "kelvin";
 		fromKelvin(theInput.value);
-		menuContainer.style.display = "none";
+		visibilityToggle("unitPickerContainer");
 	} else if (id == "toKilos") {
 		unitChanger.innerHTML = "kilos";
 		inputOrigin = "kilos";
 		fromKilos(theInput.value);
-		menuContainer.style.display = "none";
+		visibilityToggle("unitPickerContainer");
 	} else if (id == "toPounds") {
 		unitChanger.innerHTML = "pounds";
 		inputOrigin = "pounds";
 		fromPounds(theInput.value);
-		menuContainer.style.display = "none";
+		visibilityToggle("unitPickerContainer");
 	} else {
 		return;
 	}

@@ -159,6 +159,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #unitPickerContainer,
 #mainMenuContainer {
+	display: none;
 	flex-flow: column;
 	box-sizing: border-box;
 	position: absolute;
@@ -178,6 +179,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #mainMenuContainer {
 	padding: $mainPadding*1.25 $mainPadding*1.85 0 $mainPadding*1.85;
+	display: none;
 }
 
 #unitPickerContainer form,
@@ -255,5 +257,19 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 	#convertedList {
 		margin: 40px 0 0 0;
+	}
+}
+
+@media only screen and (min-device-width: 800px) {
+	header {
+		display: none;
+	}
+	#mainMenuContainer {
+		display: flex;
+		width: 384px;
+		background: rgba(0, 0, 0, 0.08);
+	}
+	#closeMainMenu {
+		display: none;
 	}
 }
