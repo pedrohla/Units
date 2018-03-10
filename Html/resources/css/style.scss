@@ -63,8 +63,15 @@ header .btn {
 	justify-content: flex-start; //overflow-y: visible;
 }
 
-.wrapper-centered {
+.wrapper {
 	justify-content: center;
+}
+
+.wrapperBlank {
+	display: flex;
+	flex-flow: column;
+	padding: 0;
+	margin: 0;
 }
 
 .horizontalScrollWrapper {
@@ -127,6 +134,9 @@ input[type=number]::-webkit-outer-spin-button {
 #convertedList {
 	width: 100%;
 	margin: 29px 0 0 0;
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
 }
 
 #convertedList > li {
@@ -261,12 +271,75 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media only screen and (min-device-width: 800px) {
+	body {
+		display: flex;
+		flex-flow: row;
+	}
+
+	.wrapperBlank {
+		flex-flow: row;
+		align-items: baseline;
+	}
+
+	.wrapper,
+	.horizontalScrollWrapper {
+		justify-content: flex-start;
+		padding-left: 108px;
+	}
+
+	#mainMenuContainer {
+		position: relative;
+		padding: 76px 0 0 72px;
+	}
+
+	#unitPickerContainer {
+		width: inherit;
+	}
+
+	#unitPicker {
+		height: 60px;
+	}
+
+	#categoryList {
+		margin: 76px 0 0 0;
+	}
+
+	#categoryList > label {
+		margin: 0 0 0 32px;
+	}
+
 	header {
 		display: none;
 	}
+	#mainInput {
+		font-size: 40px;
+		width: 336px;
+		text-align: left;
+		margin: 108px 0 0 0;
+		padding: 10px 12px;
+	}
+
+	#convertedList {
+		//height: 80px;
+	}
+
+	#convertedList > li {
+		width: auto;
+		margin-right: 64px;
+	}
+
+	#convertedList > li > div {
+		width: 140px;
+	}
+
+	.converted {
+		text-align: left !important;
+	}
+
 	#mainMenuContainer {
 		display: flex;
 		width: 384px;
+		height: 100vh;
 		background: rgba(0, 0, 0, 0.08);
 	}
 	#closeMainMenu {

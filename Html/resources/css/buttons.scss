@@ -8,6 +8,7 @@
 	font-size: 16px;
 	background: transparent;
 	cursor: pointer;
+	align-items: center;
 }
 
 .btn-ic {
@@ -82,4 +83,10 @@
 
 input[type=radio] {
 	display: none;
+}
+
+@media only screen and (min-device-width: 800px) {
+	.btn {
+		padding: 20px 24px 20px 24px;
+	}
 }

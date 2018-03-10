@@ -87,7 +87,8 @@ h2 {
   border-radius: 40px;
   font-size: 16px;
   background: transparent;
-  cursor: pointer; }
+  cursor: pointer;
+  align-items: center; }
 
 .btn-ic {
   display: flex;
@@ -152,6 +153,9 @@ h2 {
 input[type=radio] {
   display: none; }
 
+@media only screen and (min-device-width: 800px) {
+  .btn {
+    padding: 20px 24px 20px 24px; } }
 @viewport {
   zoom: 1.0;
   width: device-width; }
@@ -199,8 +203,14 @@ header .btn {
   max-width: 100vw;
   justify-content: flex-start; }
 
-.wrapper-centered {
+.wrapper {
   justify-content: center; }
+
+.wrapperBlank {
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+  margin: 0; }
 
 .horizontalScrollWrapper {
   overflow-x: scroll;
@@ -254,7 +264,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 #convertedList {
   width: 100%;
-  margin: 29px 0 0 0; }
+  margin: 29px 0 0 0;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap; }
 
 #convertedList > li {
   display: flex;
@@ -360,12 +373,59 @@ input[type=number]::-webkit-outer-spin-button {
   #convertedList {
     margin: 40px 0 0 0; } }
 @media only screen and (min-device-width: 800px) {
+  body {
+    display: flex;
+    flex-flow: row; }
+
+  .wrapperBlank {
+    flex-flow: row;
+    align-items: baseline; }
+
+  .wrapper,
+  .horizontalScrollWrapper {
+    justify-content: flex-start;
+    padding-left: 108px; }
+
+  #mainMenuContainer {
+    position: relative;
+    padding: 76px 0 0 72px; }
+
+  #unitPickerContainer {
+    width: inherit; }
+
+  #unitPicker {
+    height: 60px; }
+
+  #categoryList {
+    margin: 76px 0 0 0; }
+
+  #categoryList > label {
+    margin: 0 0 0 32px; }
+
   header {
     display: none; }
+
+  #mainInput {
+    font-size: 40px;
+    width: 336px;
+    text-align: left;
+    margin: 108px 0 0 0;
+    padding: 10px 12px; }
+
+  #convertedList > li {
+    width: auto;
+    margin-right: 64px; }
+
+  #convertedList > li > div {
+    width: 140px; }
+
+  .converted {
+    text-align: left !important; }
 
   #mainMenuContainer {
     display: flex;
     width: 384px;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.08); }
 
   #closeMainMenu {

@@ -9,89 +9,6 @@
 
 <body>
 	<div class="mainWrapper">
-		<header>
-			<div class="wrapper">
-				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')">
-					<svg width="24" height="24" viewbox="0 0 24 24">
-						<g fill="#FFF" fill-rule="evenodd">
-						<rect width="18" height="1" y="18" rx=".5"/>
-						<rect width="12" height="1" y="4" rx=".5"/>
-						<rect width="24" height="1" y="11" rx=".5"/>
-					  </g>
-					</svg>
-				</button>
-				<h2>unit converter</h2>
-			</div>
-		</header>
-		<div class="horizontalScrollWrapper">
-			<form id="categoryList">
-				<input type="radio" name="category" value="" id="catTemp" checked="checked" onclick="changeCategory(this)" />
-				<label class="btn" for="catTemp">temperature</label>
-				<input type="radio" name="category" value="" id="catWeight" onclick="changeCategory(this)" />
-				<label class="btn" for="catWeight">weight</label>
-				<input type="radio" name="category" value="" id="catArea" onclick="changeCategory(this)" />
-				<label class="btn" for="catArea">area</label>
-				<input type="radio" name="category" value="" id="catPower" onclick="changeCategory(this)" />
-				<label class="btn" for="catPower">power</label>
-				<input type="radio" name="category" value="" id="catData" onclick="changeCategory(this)" />
-				<label class="btn" for="catData">data</label>
-			</form>
-		</div>
-		<div class="wrapper wrapper-centered">
-			<form id="mainForm">
-				<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
-		</div>
-		<div class="wrapper wrapper-centered">
-			<div id="unitPicker" class="btn btn-ic-txt" onclick="visibilityToggle('unitPickerContainer')"><span id="unitPickerContent">celsius</span>
-				<svg width="24" height="24" viewbox="0 0 24 24">
-<g fill="#FFF" fill-rule="evenodd" transform="matrix(-1 0 0 1 24 2)">
-	<g transform="matrix(-1 0 0 1 19 0)">
-		<rect width="18" height="1" y="6" rx=".5" />
-		<rect width="1" height="9" x="3.136" y="-.864" rx=".5" transform="scale(1 -1) rotate(45 17.912 13.278)" />
-	</g>
-	<g transform="matrix(1 0 0 -1 5 20)">
-		<rect width="18" height="1" y="6" rx=".5" />
-		<rect width="1" height="9" x="3.149" y="-.901" rx=".5" transform="scale(1 -1) rotate(45 17.838 13.278)" />
-	</g>
-</g>
-</svg>
-			</div>
-		</div>
-		<div class="wrapper">
-			<ul id="convertedList">
-				<li>
-					<div class="converted" id="fromCelsius"></div>
-					<div class="unitType">celsius</div>
-				</li>
-				<li>
-					<div class="converted" id="fromFahrenheit"></div>
-					<div class="unitType">fahrenheit</div>
-				</li>
-				<li>
-					<div class="converted" id="fromKelvin"></div>
-					<div class="unitType">kelvin</div>
-				</li>
-			</ul>
-		</div>
-		<div id="unitPickerContainer" class="wrapper wrapper-centered">
-			<button class="btn btn-ic" id="closeList" onclick="visibilityToggle('unitPickerContainer')">
-					<svg width="24" height="24" viewbox="0 0 24 24">
-  <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
-    <rect width="23" height="1" x="1" y="10" rx=".5"/>
-    <rect width="1" height="15" x="5.157" y="8.056" rx=".5" transform="rotate(-45 5.657 15.556)"/>
-    <rect width="1" height="15" x="5.157" y="-1.843" rx=".5" transform="rotate(-135 5.657 5.657)"/>
-  </g>
-</svg>
-				</button>
-			<form id="unitPickerList">
-				<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
-				<label class="btn" for="toCelsius">celsius</label>
-				<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
-				<label class="btn" for="toFahrenheit">fahrenheit</label>
-				<input type="radio" name="unit" value="" id="toKelvin" onclick="changeUnit(this)" />
-				<label class="btn" for="toKelvin">kelvin</label>
-			</form>
-		</div>
 		<div id="mainMenuContainer" class="wrapper">
 			<div>
 				<svg id="appLogo" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewbox="0 0 160 160">
@@ -171,6 +88,93 @@
 </svg>
 					<span>math</span>
 				</label>
+			</form>
+		</div>
+	</div>
+	<div class="mainWrapper">
+		<header>
+			<div class="wrapper">
+				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+						<g fill="#FFF" fill-rule="evenodd">
+						<rect width="18" height="1" y="18" rx=".5"/>
+						<rect width="12" height="1" y="4" rx=".5"/>
+						<rect width="24" height="1" y="11" rx=".5"/>
+					  </g>
+					</svg>
+				</button>
+				<h2>unit converter</h2>
+			</div>
+		</header>
+		<div class="horizontalScrollWrapper">
+			<form id="categoryList">
+				<input type="radio" name="category" value="" id="catTemp" checked="checked" onclick="changeCategory(this)" />
+				<label class="btn" for="catTemp">temperature</label>
+				<input type="radio" name="category" value="" id="catWeight" onclick="changeCategory(this)" />
+				<label class="btn" for="catWeight">weight</label>
+				<input type="radio" name="category" value="" id="catArea" onclick="changeCategory(this)" />
+				<label class="btn" for="catArea">area</label>
+				<input type="radio" name="category" value="" id="catPower" onclick="changeCategory(this)" />
+				<label class="btn" for="catPower">power</label>
+				<input type="radio" name="category" value="" id="catData" onclick="changeCategory(this)" />
+				<label class="btn" for="catData">data</label>
+			</form>
+		</div>
+		<div class="wrapperBlank">
+			<div class="wrapper">
+				<form id="mainForm">
+					<input type="number" inputmode="numeric" step="any" placeholder="type here" class="mainInput" id="mainInput" oninput="calculate()"> </form>
+			</div>
+			<div class="wrapper">
+				<div id="unitPicker" class="btn btn-ic-txt" onclick="visibilityToggle('unitPickerContainer')"><span id="unitPickerContent">celsius</span>
+					<svg width="24" height="24" viewbox="0 0 24 24">
+<g fill="#FFF" fill-rule="evenodd" transform="matrix(-1 0 0 1 24 2)">
+	<g transform="matrix(-1 0 0 1 19 0)">
+		<rect width="18" height="1" y="6" rx=".5" />
+		<rect width="1" height="9" x="3.136" y="-.864" rx=".5" transform="scale(1 -1) rotate(45 17.912 13.278)" />
+	</g>
+	<g transform="matrix(1 0 0 -1 5 20)">
+		<rect width="18" height="1" y="6" rx=".5" />
+		<rect width="1" height="9" x="3.149" y="-.901" rx=".5" transform="scale(1 -1) rotate(45 17.838 13.278)" />
+	</g>
+</g>
+</svg>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<ul id="convertedList">
+				<li>
+					<div class="converted" id="fromCelsius"></div>
+					<div class="unitType">celsius</div>
+				</li>
+				<li>
+					<div class="converted" id="fromFahrenheit"></div>
+					<div class="unitType">fahrenheit</div>
+				</li>
+				<li>
+					<div class="converted" id="fromKelvin"></div>
+					<div class="unitType">kelvin</div>
+				</li>
+			</ul>
+		</div>
+		<div id="unitPickerContainer" class="wrapper wrapper-centered">
+			<button class="btn btn-ic" id="closeList" onclick="visibilityToggle('unitPickerContainer')">
+					<svg width="24" height="24" viewbox="0 0 24 24">
+  <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
+    <rect width="23" height="1" x="1" y="10" rx=".5"/>
+    <rect width="1" height="15" x="5.157" y="8.056" rx=".5" transform="rotate(-45 5.657 15.556)"/>
+    <rect width="1" height="15" x="5.157" y="-1.843" rx=".5" transform="rotate(-135 5.657 5.657)"/>
+  </g>
+</svg>
+				</button>
+			<form id="unitPickerList">
+				<input type="radio" name="unit" value="" id="toCelsius" checked="checked" onclick="changeUnit(this)" />
+				<label class="btn" for="toCelsius">celsius</label>
+				<input type="radio" name="unit" value="" id="toFahrenheit" onclick="changeUnit(this)" />
+				<label class="btn" for="toFahrenheit">fahrenheit</label>
+				<input type="radio" name="unit" value="" id="toKelvin" onclick="changeUnit(this)" />
+				<label class="btn" for="toKelvin">kelvin</label>
 			</form>
 		</div>
 	</div>
