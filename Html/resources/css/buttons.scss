@@ -17,7 +17,7 @@
 	justify-content: center;
 	height: 44px;
 	width: 44px;
-	padding: 0;
+	padding: 0 !important;
 }
 
 .btn-ic svg {
@@ -41,7 +41,7 @@
 
 .btn-ic-txt span {
 	margin-right: 20px;
-	line-height: 22px;
+	margin-top: -1px;
 }
 
 .btn-menu span {
@@ -88,5 +88,12 @@ input[type=radio] {
 @media only screen and (min-device-width: 800px) {
 	.btn {
 		padding: 20px 24px 20px 24px;
+	}
+	#unitPicker,
+	#unitPickerList input[type=radio]:checked + label,
+	#categoryList input[type=radio]:checked + label,
+	#mainMenu input[type=radio]:checked + label {
+		background: rgba(255, 255, 255, 0.2);
+		border: none;
 	}
 }

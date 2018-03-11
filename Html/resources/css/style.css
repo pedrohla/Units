@@ -96,7 +96,7 @@ h2 {
   justify-content: center;
   height: 44px;
   width: 44px;
-  padding: 0; }
+  padding: 0 !important; }
 
 .btn-ic svg {
   align-self: center; }
@@ -115,7 +115,7 @@ h2 {
 
 .btn-ic-txt span {
   margin-right: 20px;
-  line-height: 22px; }
+  margin-top: -1px; }
 
 .btn-menu span {
   margin-left: 20px;
@@ -155,7 +155,14 @@ input[type=radio] {
 
 @media only screen and (min-device-width: 800px) {
   .btn {
-    padding: 20px 24px 20px 24px; } }
+    padding: 20px 24px 20px 24px; }
+
+  #unitPicker,
+  #unitPickerList input[type=radio]:checked + label,
+  #categoryList input[type=radio]:checked + label,
+  #mainMenu input[type=radio]:checked + label {
+    background: rgba(255, 255, 255, 0.2);
+    border: none; } }
 @viewport {
   zoom: 1.0;
   width: device-width; }
@@ -185,6 +192,9 @@ header {
 
 header .btn {
   margin-top: 0px; }
+
+main {
+  width: 100%; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -271,7 +281,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 29px 0 0 0;
   display: flex;
   flex-flow: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  align-content: flex-start; }
 
 #convertedList > li {
   display: flex;
@@ -317,7 +328,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-attachment: fixed; }
 
 #unitPickerContainer {
-  text-align: center; }
+  text-align: center;
+  justify-content: center; }
 
 #mainMenuContainer {
   padding: 30px 44.4px 0 44.4px;
@@ -326,7 +338,8 @@ input[type=number]::-webkit-outer-spin-button {
 #unitPickerContainer form,
 #mainMenuContainer form {
   display: flex;
-  flex-flow: column; }
+  flex-flow: column;
+  flex-wrap: wrap; }
 
 #unitPickerContainer form {
   align-items: center; }
@@ -403,10 +416,13 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 76px 0 0 72px; }
 
   #unitPickerContainer {
-    width: inherit; }
+    max-width: 800px; }
 
   #unitPicker {
     align-self: flex-end; }
+
+  #unitPickerList > label {
+    margin: 20px 48px 20px 0; }
 
   #categoryList {
     margin: 120px 0 0 0; }
@@ -421,10 +437,11 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 44px;
     width: 360px;
     text-align: left;
-    margin: 74px 0 0 0;
-    padding: 21px 0; }
+    margin: 94px 0 0 0;
+    padding: 12px 0; }
 
   #convertedList {
+    height: 40vh;
     margin: 85px 0 0 0; }
 
   #convertedList > li {
@@ -447,4 +464,13 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 80px 0 0 0; }
 
   #closeMainMenu {
-    display: none; } }
+    display: none; }
+
+  #closeList {
+    top: 130px;
+    left: 16px; }
+
+  #unitPickerContainer form {
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 50vh; } }

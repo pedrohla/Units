@@ -43,6 +43,10 @@ header .btn {
 	margin-top: 0px;
 }
 
+main {
+	width: 100%;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
@@ -141,6 +145,7 @@ input[type=number]::-webkit-outer-spin-button {
 	display: flex;
 	flex-flow: column;
 	flex-wrap: wrap;
+	align-content: flex-start;
 }
 
 #convertedList > li {
@@ -194,6 +199,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #unitPickerContainer {
 	text-align: center;
+	justify-content: center;
 }
 
 #mainMenuContainer {
@@ -205,6 +211,7 @@ input[type=number]::-webkit-outer-spin-button {
 #mainMenuContainer form {
 	display: flex;
 	flex-flow: column;
+	flex-wrap: wrap;
 }
 
 #unitPickerContainer form {
@@ -307,12 +314,16 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 
 	#unitPickerContainer {
-		width: inherit;
+		max-width: 800px;
 	}
 
 	#unitPicker {
 		//height: 60px;
 		align-self: flex-end;
+	}
+
+	#unitPickerList > label {
+		margin: 20px 48px 20px 0;
 	}
 
 	#categoryList {
@@ -330,12 +341,12 @@ input[type=number]::-webkit-outer-spin-button {
 		font-size: 44px;
 		width: 360px;
 		text-align: left;
-		margin: 74px 0 0 0;
-		padding: 21px 0;
+		margin: 94px 0 0 0;
+		padding: 12px 0;
 	}
 
 	#convertedList {
-		//height: 80px;
+		height: 40vh;
 		margin: 85px 0 0 0;
 	}
 
@@ -365,5 +376,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 	#closeMainMenu {
 		display: none;
+	}
+
+	#closeList {
+		top: 130px;
+		left: 16px;
+	}
+
+	#unitPickerContainer form {
+		align-items: flex-start;
+		align-content: flex-start;
+		height: 50vh;
 	}
 }
