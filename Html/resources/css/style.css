@@ -189,34 +189,38 @@ header .btn {
 ::-webkit-scrollbar {
   display: none; }
 
-.mainWrapper {
+.wrapperCol {
   display: flex;
   flex-direction: column;
   max-width: 100vw; }
 
-.wrapper,
+.wrapperRow,
 .horizontalScrollWrapper {
   display: flex;
   flex-direction: row;
   padding: 0 24px;
   box-sizing: border-box;
   max-width: 100vw;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow-x: scroll;
+  overflow: -moz-scrollbars-none; }
 
-.wrapper {
-  justify-content: center; }
-
-.wrapperBlank {
+.wrapperSwitch {
   display: flex;
   flex-flow: column;
   padding: 0;
   margin: 0; }
 
-.horizontalScrollWrapper {
-  overflow-x: scroll;
-  overflow: -moz-scrollbars-none; }
+.wrapperSwitch .wrapperRow {
+  justify-content: center; }
 
-.horizontalScrollWrapper > form {
+/*
+.horizontalScrollWrapper {
+	overflow-x: scroll;
+	overflow: -moz-scrollbars-none;
+}
+*/
+.wrapperRow > form {
   display: flex;
   flex-direction: row; }
 
@@ -291,7 +295,11 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden; }
 
 .converted:empty:not(:focus):before {
-  content: "00000"; }
+  content: "00000";
+  color: rgba(255, 255, 255, 0.55); }
+
+#unitPicker {
+  align-self: center; }
 
 #unitPickerContainer,
 #mainMenuContainer {
@@ -377,14 +385,18 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-flow: row; }
 
-  .wrapperBlank {
+  main.wrapperCol {
+    padding-left: 88px; }
+
+  .wrapperSwitch {
     flex-flow: row;
     align-items: baseline; }
 
-  .wrapper,
-  .horizontalScrollWrapper {
-    justify-content: flex-start;
-    padding-left: 108px; }
+  .wrapperSwitch .wrapperRow {
+    justify-content: flex-start; }
+
+  .wrapperRow {
+    justify-content: flex-start; }
 
   #mainMenuContainer {
     position: relative;
@@ -394,10 +406,10 @@ input[type=number]::-webkit-outer-spin-button {
     width: inherit; }
 
   #unitPicker {
-    height: 60px; }
+    align-self: flex-end; }
 
   #categoryList {
-    margin: 76px 0 0 0; }
+    margin: 120px 0 0 0; }
 
   #categoryList > label {
     margin: 0 0 0 32px; }
@@ -406,18 +418,21 @@ input[type=number]::-webkit-outer-spin-button {
     display: none; }
 
   #mainInput {
-    font-size: 40px;
-    width: 336px;
+    font-size: 44px;
+    width: 360px;
     text-align: left;
-    margin: 108px 0 0 0;
-    padding: 10px 12px; }
+    margin: 74px 0 0 0;
+    padding: 21px 0; }
+
+  #convertedList {
+    margin: 85px 0 0 0; }
 
   #convertedList > li {
     width: auto;
-    margin-right: 64px; }
+    margin: 16px 64px 0 0; }
 
   #convertedList > li > div {
-    width: 140px; }
+    width: 168px; }
 
   .converted {
     text-align: left !important; }
@@ -427,6 +442,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 384px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.08); }
+
+  #mainMenu {
+    margin: 80px 0 0 0; }
 
   #closeMainMenu {
     display: none; } }
