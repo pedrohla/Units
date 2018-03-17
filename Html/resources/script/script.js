@@ -89,10 +89,9 @@ function visibilityToggle(ele) {
 	var menu = document.getElementById(ele);
 	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
 	if (menuVisibility === "none") {
-		menu.classList.add("makeVisible");
+		menu.classList.toggle("makeVisible");
 	} else {
-		menu.style.opacity = "0";
-		menu.style.display = "none";
+		menu.classList.toggle("makeVisible");
 	}
 }
 
@@ -102,10 +101,9 @@ function mainMenuVisibilityToggle() {
 	var windowSize = screen.width;
 	if (windowSize < 800) {
 		if (menuVisibility === "none") {
-			menu.classList.add("makeVisible");
+			menu.classList.toggle("makeVisible");
 		} else {
-			menu.style.opacity = "0";
-			menu.style.display = "none";
+			menu.classList.toggle("makeVisible");
 		}
 	} else {
 		return;

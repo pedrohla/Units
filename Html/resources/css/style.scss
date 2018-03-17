@@ -210,6 +210,9 @@ input[type=number]::-webkit-outer-spin-button {
 #mainMenuContainer {
 	padding: $mainPadding*1.25 $mainPadding*1.85 0 $mainPadding*1.85;
 	opacity: 0;
+	width: 0;
+	display: flex;
+	left: $mainPadding*-1.85*2;
 }
 
 #unitPickerContainer form,

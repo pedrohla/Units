@@ -189,7 +189,7 @@ input[type=radio] {
     transform: translateY(10vh); }
   100% {
     transform: translateY(0vh); } }
-@keyframes makeVisible {
+@keyframes kMakeVisible {
   0% {
     display: none;
     opacity: 0; }
@@ -198,6 +198,15 @@ input[type=radio] {
     opacity: 0; }
   100% {
     opacity: 1; } }
+@keyframes kMakeInvisible {
+  0% {
+    display: flex;
+    opacity: 1; }
+  1% {
+    display: none;
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 .globalFadeIn {
   animation-name: globalFadeIn;
   animation-duration: 850ms;
@@ -215,11 +224,10 @@ input[type=radio] {
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-delay: 200ms; }
 
-.makeVisible {
-  animation-name: makeVisible;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation-delay: 200ms; }
+#mainMenuContainer.makeVisible {
+  width: 100%;
+  opacity: 1;
+  left: 0px; }
 
 @viewport {
   zoom: 1.0;
@@ -394,7 +402,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 #mainMenuContainer {
   padding: 30px 44.4px 0 44.4px;
-  opacity: 0; }
+  opacity: 0;
+  width: 0;
+  display: flex;
+  left: -88.8px; }
 
 #unitPickerContainer form,
 #mainMenuContainer form {

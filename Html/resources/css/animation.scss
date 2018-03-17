@@ -34,7 +34,7 @@
 	}
 }
 
-@keyframes makeVisible {
+@keyframes kMakeVisible {
 	0% {
 		display: none;
 		opacity: 0;
@@ -45,6 +45,20 @@
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes kMakeInvisible {
+	0% {
+		display: flex;
+		opacity: 1;
+	}
+	1% {
+		display: none;
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 
@@ -68,13 +82,8 @@
 	animation-delay: 200ms;
 }
 
-.makeVisible {
-	animation-name: makeVisible;
-	animation-duration: 500ms;
-	animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	animation-delay: 200ms;
-}
-
-#mainMenuContainer {
-	//animation: globalFadeIn 300ms ease-in-out;
+#mainMenuContainer.makeVisible {
+	width: 100%;
+	opacity: 1;
+	left: 0px;
 }
