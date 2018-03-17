@@ -145,6 +145,9 @@ h2 {
   color: #5A1DA9 !important;
   fill: #5A1DA9 !important; }
 
+.btn:hover span {
+  background: transparent !important; }
+
 #unitPickerList label,
 #categoryList label,
 #mainMenu label {
@@ -163,6 +166,61 @@ input[type=radio] {
   #mainMenu input[type=radio]:checked + label {
     background: rgba(255, 255, 255, 0.2);
     border: none; } }
+* {
+  /*
+  -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  */
+  transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+@keyframes globalFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50vw); }
+  100% {
+    transform: translateX(0vw); } }
+@keyframes slideInFromBelow {
+  0% {
+    transform: translateY(10vh); }
+  100% {
+    transform: translateY(0vh); } }
+@keyframes makeVisible {
+  0% {
+    display: none;
+    opacity: 0; }
+  1% {
+    display: flex;
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.globalFadeIn {
+  animation-name: globalFadeIn;
+  animation-duration: 850ms;
+  animation-timing-function: ease-in-out; }
+
+.slideInFromRight {
+  animation-name: slideInFromRight;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 200ms; }
+
+.slideInFromBelow {
+  animation-name: slideInFromBelow;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 200ms; }
+
+.makeVisible {
+  animation-name: makeVisible;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation-delay: 200ms; }
+
 @viewport {
   zoom: 1.0;
   width: device-width; }
@@ -180,12 +238,9 @@ html {
 
 body {
   width: 100vw;
-  /*
-  background: $bg1;
-  background-attachment: fixed;
-  */
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 header {
   margin: 14px 34px 0 -10px; }
@@ -198,6 +253,12 @@ main {
 
 ::-webkit-scrollbar {
   display: none; }
+
+.visible {
+  opacity: 1; }
+
+.invisible {
+  opacity: 0; }
 
 .wrapperCol {
   display: flex;
@@ -306,7 +367,7 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden; }
 
 .converted:empty:not(:focus):before {
-  content: "00000";
+  content: "0.00";
   color: rgba(255, 255, 255, 0.55); }
 
 #unitPicker {
@@ -333,7 +394,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #mainMenuContainer {
   padding: 30px 44.4px 0 44.4px;
-  display: none; }
+  opacity: 0; }
 
 #unitPickerContainer form,
 #mainMenuContainer form {

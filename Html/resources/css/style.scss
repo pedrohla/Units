@@ -3,6 +3,7 @@ $mainPadding: 24px;
 @import 'color';
 @import 'typography';
 @import 'buttons';
+@import 'animation';
 
 @viewport {
 	zoom: 1.0;
@@ -25,14 +26,10 @@ html {
 }
 
 body {
-	//height: 100%;
 	width: 100vw;
-	/*
-	background: $bg1;
-	background-attachment: fixed;
-	*/
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
 header {
@@ -49,6 +46,14 @@ main {
 
 ::-webkit-scrollbar {
 	display: none;
+}
+
+.visible {
+	opacity: 1;
+}
+
+.invisible {
+	opacity: 0;
 }
 
 .wrapperCol {
@@ -173,7 +178,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .converted:empty:not(:focus):before {
-	content: "00000";
+	content: "0.00";
 	color: rgba(255, 255, 255, 0.55);
 }
 
@@ -204,7 +209,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #mainMenuContainer {
 	padding: $mainPadding*1.25 $mainPadding*1.85 0 $mainPadding*1.85;
-	display: none;
+	opacity: 0;
 }
 
 #unitPickerContainer form,

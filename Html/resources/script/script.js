@@ -53,15 +53,19 @@ theInput.oninput = function () {
 	}
 };
 */
+
+/*
 function visibilityToggle(ele) {
 	var menu = document.getElementById(ele);
 	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
 	if (menuVisibility === "none") {
+		menu.style.opacity = "1";
 		menu.style.display = "flex";
 	} else {
+		menu.style.opacity = "0";
 		menu.style.display = "none";
 	}
-};
+}
 
 function mainMenuVisibilityToggle() {
 	var menu = document.getElementById('mainMenuContainer');
@@ -69,14 +73,44 @@ function mainMenuVisibilityToggle() {
 	var windowSize = screen.width;
 	if (windowSize < 800) {
 		if (menuVisibility === "none") {
+			menu.style.opacity = "1";
 			menu.style.display = "flex";
 		} else {
+			menu.style.opacity = "0";
 			menu.style.display = "none";
 		}
 	} else {
 		return;
 	}
-};
+}
+*/
+
+function visibilityToggle(ele) {
+	var menu = document.getElementById(ele);
+	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
+	if (menuVisibility === "none") {
+		menu.classList.add("makeVisible");
+	} else {
+		menu.style.opacity = "0";
+		menu.style.display = "none";
+	}
+}
+
+function mainMenuVisibilityToggle() {
+	var menu = document.getElementById('mainMenuContainer');
+	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
+	var windowSize = screen.width;
+	if (windowSize < 800) {
+		if (menuVisibility === "none") {
+			menu.classList.add("makeVisible");
+		} else {
+			menu.style.opacity = "0";
+			menu.style.display = "none";
+		}
+	} else {
+		return;
+	}
+}
 
 //Adds event listeners to main menu buttons
 var menuButtons = document.getElementsByClassName("mainMenuButton");

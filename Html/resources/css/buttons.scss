@@ -75,6 +75,10 @@
 	fill: $secondary-color !important;
 }
 
+.btn:hover span {
+	background: transparent !important;
+}
+
 #unitPickerList label,
 #categoryList label,
 #mainMenu label {

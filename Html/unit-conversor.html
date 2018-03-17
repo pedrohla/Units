@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<div class="wrapperCol">
+	<div class="wrapperCol globalFadeIn">
 		<div id="mainMenuContainer" class="wrapperRow">
 			<div>
 				<svg id="appLogo" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewbox="0 0 160 160">
@@ -91,7 +91,7 @@
 			</form>
 		</div>
 	</div>
-	<main class="wrapperCol">
+	<main class="wrapperCol globalFadeIn">
 		<header>
 			<div class="wrapperRow">
 				<button class="btn btn-ic" onclick="visibilityToggle('mainMenuContainer')">
@@ -106,7 +106,7 @@
 				<h2>unit converter</h2>
 			</div>
 		</header>
-		<div class="wrapperRow">
+		<div class="wrapperRow slideInFromRight">
 			<form id="categoryList">
 				<input type="radio" name="category" value="" id="catTemp" checked="checked" onclick="changeCategory(this)" />
 				<label class="btn" for="catTemp">temperature</label>
@@ -140,7 +140,7 @@
 					</svg>
 			</div>
 		</div>
-		<div class="wrapperRow">
+		<div class="wrapperRow slideInFromBelow">
 			<ul id="convertedList">
 				<li>
 					<div class="converted" id="fromCelsius"></div>
@@ -183,3 +183,4 @@
 <link rel="stylesheet" href="resources/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="resources/script/script.js"></script>
+<script src="resources/script/anime.js"></script>
