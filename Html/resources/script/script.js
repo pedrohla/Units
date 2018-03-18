@@ -85,26 +85,22 @@ function mainMenuVisibilityToggle() {
 }
 */
 
+//Variables
+var menu = document.getElementById('mainMenuContainer');
+var main = document.getElementById('main');
+var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
+var windowSize = screen.width;
+
 function visibilityToggle(ele) {
 	var menu = document.getElementById(ele);
-	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
-	if (menuVisibility === "none") {
-		menu.classList.toggle("makeVisible");
-	} else {
-		menu.classList.toggle("makeVisible");
-	}
+	menu.classList.toggle("makeVisible");
+	main.classList.toggle("makeInvisible");
 }
 
 function mainMenuVisibilityToggle() {
-	var menu = document.getElementById('mainMenuContainer');
-	var menuVisibility = window.getComputedStyle(menu, null).getPropertyValue("display");
-	var windowSize = screen.width;
 	if (windowSize < 800) {
-		if (menuVisibility === "none") {
-			menu.classList.toggle("makeVisible");
-		} else {
-			menu.classList.toggle("makeVisible");
-		}
+		menu.classList.toggle("makeVisible");
+		main.classList.toggle("makeInvisible");
 	} else {
 		return;
 	}

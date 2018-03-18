@@ -59,20 +59,24 @@
 .btn:hover,
 .btn-ic:hover,
 .btn:hover span,
-.btn:hover svg g,
-.btn:hover svg path,
 #categoryList label:hover,
 #mainMenu label:hover,
 .btn:active,
 .btn-ic:active,
 .btn:active span,
-.btn:active svg g,
-.btn:active svg path,
 #categoryList label:active,
 #mainMenu label:active {
 	background-color: $primary-color !important;
 	color: $secondary-color !important;
 	fill: $secondary-color !important;
+}
+
+.btn:hover svg g,
+.btn:hover svg path,
+.btn:active svg g,
+.btn:active svg path,
+.btn:active svg circle {
+	stroke: $secondary-color !important;
 }
 
 .btn:hover span {

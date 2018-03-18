@@ -42,6 +42,7 @@ header .btn {
 
 main {
 	width: 100%;
+	opacity: 1;
 }
 
 ::-webkit-scrollbar {
@@ -189,6 +190,7 @@ input[type=number]::-webkit-outer-spin-button {
 #unitPickerContainer,
 #mainMenuContainer {
 	display: none;
+	z-index: 5;
 	flex-flow: column;
 	box-sizing: border-box;
 	position: absolute;
@@ -196,15 +198,17 @@ input[type=number]::-webkit-outer-spin-button {
 	margin: 0;
 	width: 100%;
 	min-height: 100%;
-	padding: $mainPadding $mainPadding 0 $mainPadding;
-	list-style: none;
-	background: $bg1;
-	background-attachment: fixed;
+	list-style: none; //background: $bg1;
+	//background-attachment: fixed;
 }
 
 #unitPickerContainer {
 	text-align: center;
 	justify-content: center;
+	opacity: 0;
+	width: 0;
+	display: flex;
+	right: $mainPadding*-1.85*2;
 }
 
 #mainMenuContainer {

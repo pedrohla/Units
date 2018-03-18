@@ -130,20 +130,23 @@ h2 {
 .btn:hover,
 .btn-ic:hover,
 .btn:hover span,
-.btn:hover svg g,
-.btn:hover svg path,
 #categoryList label:hover,
 #mainMenu label:hover,
 .btn:active,
 .btn-ic:active,
 .btn:active span,
-.btn:active svg g,
-.btn:active svg path,
 #categoryList label:active,
 #mainMenu label:active {
   background-color: #fff !important;
   color: #5A1DA9 !important;
   fill: #5A1DA9 !important; }
+
+.btn:hover svg g,
+.btn:hover svg path,
+.btn:active svg g,
+.btn:active svg path,
+.btn:active svg circle {
+  stroke: #5A1DA9 !important; }
 
 .btn:hover span {
   background: transparent !important; }
@@ -210,7 +213,7 @@ input[type=radio] {
 .globalFadeIn {
   animation-name: globalFadeIn;
   animation-duration: 850ms;
-  animation-timing-function: ease-in-out; }
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
 
 .slideInFromRight {
   animation-name: slideInFromRight;
@@ -227,7 +230,18 @@ input[type=radio] {
 #mainMenuContainer.makeVisible {
   width: 100%;
   opacity: 1;
-  left: 0px; }
+  left: 0px;
+  transition: all 380ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 580ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+#unitPickerContainer.makeVisible {
+  width: 100%;
+  opacity: 1;
+  right: 0px;
+  transition: all 380ms cubic-bezier(0.215, 0.61, 0.355, 1), opacity 580ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+main.makeInvisible {
+  opacity: 0;
+  transition: all 380ms cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 @viewport {
   zoom: 1.0;
@@ -257,7 +271,8 @@ header .btn {
   margin-top: 0px; }
 
 main {
-  width: 100%; }
+  width: 100%;
+  opacity: 1; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -384,6 +399,7 @@ input[type=number]::-webkit-outer-spin-button {
 #unitPickerContainer,
 #mainMenuContainer {
   display: none;
+  z-index: 5;
   flex-flow: column;
   box-sizing: border-box;
   position: absolute;
@@ -391,14 +407,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
   width: 100%;
   min-height: 100%;
-  padding: 24px 24px 0 24px;
-  list-style: none;
-  background: linear-gradient(135deg, #6713d2 0%, #cc208e 100%);
-  background-attachment: fixed; }
+  list-style: none; }
 
 #unitPickerContainer {
   text-align: center;
-  justify-content: center; }
+  justify-content: center;
+  opacity: 0;
+  width: 0;
+  display: flex;
+  right: -88.8px; }
 
 #mainMenuContainer {
   padding: 30px 44.4px 0 44.4px;

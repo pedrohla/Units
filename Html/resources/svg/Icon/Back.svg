@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <g fill="#FFF" fill-rule="evenodd" transform="translate(0 1)">
-    <rect width="23" height="1" x="1" y="10" rx=".5"/>
-    <rect width="1" height="15" x="5.157" y="8.056" rx=".5" transform="rotate(-45 5.657 15.556)"/>
-    <rect width="1" height="15" x="5.157" y="-1.843" rx=".5" transform="rotate(-135 5.657 5.657)"/>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="round">
+    <path stroke="#FFF" d="M11 2L1.1767767 11.8232233C1.07914562 11.9208544 1.07914562 12.0791456 1.1767767 12.1767767L11 22M23 12L2 12"/>
   </g>
 </svg>
